@@ -1,0 +1,40 @@
+
+this_makefile := ${lastword ${MAKEFILE_LIST}}
+SHELL = @bash@ -o pipefail -o errexit -o nounset -o errtrace
+.SECONDARY:
+
+# RDDL says where to download everything; located at http://www.w3.org/2001/XMLSchema
+
+# autoconf/configure standard things
+srcdir = @srcdir@
+
+# custom things from autoconf/configure
+schematron_compile = @schematron_compile@
+curl = @curl@
+
+all_files = \
+  ${srcdir}/XMLSchema.xsd \
+  ${srcdir}/datatypes.dtd \
+  ${srcdir}/XMLSchema.dtd \
+  ${srcdir}/xmlschema-instance.sch.xsl \
+
+
+.PHONY: all
+all: ${all_files}
+
+.PHONY: purge
+purge:
+	${RM} ${all_files}
+
+XMLSchema.xsd:
+	${curl} -o $@ "http://www.w3.org/2001/XMLSchema.xsd"
+
+datatypes.dtd:
+	${curl} -o $@ "http://www.w3.org/2001/datatypes.dtd"
+
+XMLSchema.dtd:
+	${curl} -o $@ "http://www.w3.org/2001/XMLSchema.dtd"
+
+%.sch.xsl: %.sch
+	${schematron_compile} --output-file=$@ $<
+
