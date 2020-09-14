@@ -9,10 +9,15 @@ This has two different XML schemas for XML Schema:
     
 Both of these bring in the DTD for XML Schema.
 
-This also has Schematron for the XML Schema Instance vocabulary (`xsi`):
+Schematron for the XML Schema Instance vocabulary (`xsi`):
 
-- `xmlschema-instance.sch`: the raw Schematron
-- `xmlschema-instance.sch.xsl`: Schematron compiled into XSLT
+- `xml-schema-instance.sch`: the raw Schematron
+- `xml-schema-instance.sch.xsl`: Schematron compiled into XSLT
+
+Schematron for additional XML Schema checks:
+
+- `xml-schema.sch`: the raw Schematron
+- `xml-schema.sch.xsl`: Schematron compiled into XSLT
 
 To update files:
 

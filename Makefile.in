@@ -16,7 +16,7 @@ all_files = \
   ${srcdir}/XMLSchema.xsd \
   ${srcdir}/datatypes.dtd \
   ${srcdir}/XMLSchema.dtd \
-  ${srcdir}/xmlschema-instance.sch.xsl \
+  ${srcdir}/xml-schema-instance.sch.xsl \
   ${srcdir}/xml-schema.sch.xsl \
 
 
