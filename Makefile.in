@@ -17,6 +17,7 @@ all_files = \
   ${srcdir}/datatypes.dtd \
   ${srcdir}/XMLSchema.dtd \
   ${srcdir}/xmlschema-instance.sch.xsl \
+  ${srcdir}/xml-schema.sch.xsl \
 
 
 .PHONY: all
